@@ -1,16 +1,20 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Contents
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" Line_number. Title:
+" Contents; Section. Title:
 "   0. Contents
-"    . Goals for this vimrc
-"  16. Notes on the use of vim
-"  38. Highlighting
-"  67. Tabs
-"  81. Other
-" 110. Obsolete
-" 120. Unknown
+"   1. Goals for this vimrc
+"   2. Notes on the use of vim
+"   3. Highlighting
+"   4. Tabs
+"   5. Other
+"   6. Obsolete
+"   7. Unknown
+"
+"  
+"  Question:
+"  * I wonder if it's possible for vim to autoupdate the line numbers on which
+"    sections appear. 
 "
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,6 +40,14 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Notes on the use of vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" For help on any command, issue the command:
+" help 'optionname'
+" ex:
+" help 'tabstop'
+"
+" To unset options, vim prepends a "no" to the option, e.g.:
+" set nolist
 "
 " Regex
 " :%s/foo/bar/g
@@ -106,14 +118,20 @@ highlight Search ctermfg=red ctermbg=green
 
 " Set high-contrast colors for highlighting parentheses
 hi MatchParen cterm=bold ctermbg=blue ctermfg=green
-"
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" End Highlighting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
 "
 " NOTE: Current tab-width complies to Google's Python Style Guide.
 " Also, add a reference!
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set width of tab
 set tabstop=4
@@ -121,8 +139,15 @@ set tabstop=4
 " Type spaces instead of tabs
 set expandtab
 
-" Replace all tabs with tabs according to the settings in this section
-" retab
+" * tabstop=4: max width of actual tab character
+" * softtabstop=0: setting to nonzero uses a combination of space characters
+"   and tab characters to simulate tabs of tabstop width
+" * expandtab: insert spaces instead of tab characters. also affects retab,
+"   but idk what that does
+"
+" shiftwidth=3: size of an indent measured in space characters
+" smarttab: tab key inserts only spaces
+" set tabstop=8 softtabstop=0 expandtab shiftwidth=3 smarttab
 "
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -130,6 +155,7 @@ set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Turn on line numbering
+" Alternatively, :set number
 set nu
 
 " Turn on syntax highlighting
@@ -139,14 +165,18 @@ syntax on
 set ruler
 
 "Map hjkl directional keys to htns
-map h <left>
-map t <down>
-map n <up>
-map s <right>
+"map h <left>
+"map t <down>
+"map n <up> " Problem: the n key is used for 'next' in seaches.
+"map s <right>
 
 "Set color scheme
 "colorscheme elflord
 
+" put swap files in ~/.vim/swap_files
+" ^= notation for :set prepends to the list, so this will be checked first
+" wait but what if it doesn't exist?
+"set directory^=$HOME/.vim/swap_files
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Obsolete

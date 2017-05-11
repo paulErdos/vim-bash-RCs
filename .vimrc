@@ -70,6 +70,10 @@ let t  = matchadd("Tabs", '\t\+')
 " ctermbg --> block
 highlight Search ctermfg=red ctermbg=green
 
+" Set high-contrast colors for highlighting parentheses
+hi MatchParen cterm=bold ctermbg=blue ctermfg=green
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
 "
@@ -96,11 +100,8 @@ set nu
 " Turn on syntax highlighting
 syntax on
 
-"Show line numbers at the bottom
+"Show line and column numbers at the bottom
 set ruler
-
-"Make sane the highlighting of parens
-hi MatchParen cterm=underline  ctermfg=blue
 
 "Map hjkl directional keys to htns
 map h <left>

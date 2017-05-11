@@ -1,20 +1,41 @@
-"""
-"""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Contents
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" Contents; Line_number. Title:
-"  16. Notes
+" Line_number. Title:
+"   0. Contents
+"    . Goals for this vimrc
+"  16. Notes on the use of vim
 "  38. Highlighting
 "  67. Tabs
 "  81. Other
 " 110. Obsolete
 " 120. Unknown
 "
-"""
-"""
-
-""""
-" Vim Notes
-"""
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Goals
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" The goals for this vimrc are:
+" * Compliance with style guides as much as reasonable:
+"   - Google's Python Style Guide[1]
+"   - Google's C++    Style Guide[2]
+"   - NASA's   C      Style Guide[3]
+"
+" * Can be used and understood by a non-beginner vim novice
+"
+" * Contains notes on how to use vim, with sources as applicable
+"   --> These should be saved and archived.
+"
+" Sources:
+" 1,
+" 2.
+" 3.
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Notes on the use of vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Regex
 " :%s/foo/bar/g
@@ -30,13 +51,16 @@
 " enter text
 " escape
 "
-"""
-" End Vim Notes
-"""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Highlighting                                                        "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlighting
+"
+" Notes:
+" * 80 columns complies with Google's Python style guide. (add acknowledgement)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Notes and Examples
+" -----------------------------------------------------------------------------
 "
 " Highlight long lines beyond the 80th character
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -48,6 +72,8 @@
 " The following won't work; cterm will be underline.
 " highlight OverLength cterm=bold cterm=underline
 "
+" -----------------------------------------------------------------------------
+
 " However, we can set cterm to be a list!
 highlight OverLength cterm=bold,underline
 
@@ -55,6 +81,8 @@ highlight OverLength cterm=bold,underline
 highlight ExtraWhitespace ctermbg=green
 
 " Show tabs
+" Might be nice to underline in blue every 4th whitespace when there are no
+" characters aside from whitespace.
 highlight Tabs ctermbg=blue
 
 " Combine the matches in the order we want
@@ -62,8 +90,14 @@ let ew = matchadd("ExtraWhitespace", ' \+\ze\t\|\s\+\%#\@<!$')
 let ol = matchadd("OverLength", '\%81v.*')
 let t  = matchadd("Tabs", '\t\+')
 
+" Set colorcolumn to an appropriate position and effective color.
+" The goal is to bring attention to lines overlength.
+" :help cterm for color options
+set colorcolumn=81
+highlight colorcolumn ctermbg=8 ctermfg=11
+
 " Turn on search highlighting
-"set hlsearch
+set hlsearch 
 
 " Turn on search highlighting.
 " ctermfg --> text
@@ -72,12 +106,13 @@ highlight Search ctermfg=red ctermbg=green
 
 " Set high-contrast colors for highlighting parentheses
 hi MatchParen cterm=bold ctermbg=blue ctermfg=green
-
-
+"
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
 "
 " NOTE: Current tab-width complies to Google's Python Style Guide.
+" Also, add a reference!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set width of tab
@@ -88,8 +123,8 @@ set expandtab
 
 " Replace all tabs with tabs according to the settings in this section
 " retab
-
-
+"
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -134,5 +169,4 @@ map s <right>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " * http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

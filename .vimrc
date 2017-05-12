@@ -11,10 +11,10 @@
 "   6. Obsolete
 "   7. Unknown
 "
-"  
+"
 "  Question:
 "  * I wonder if it's possible for vim to autoupdate the line numbers on which
-"    sections appear. 
+"    sections appear.
 "
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

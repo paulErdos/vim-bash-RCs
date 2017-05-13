@@ -72,9 +72,12 @@
 " escape
 "
 " Folding
-" zf<number of lines>j
-" e.g., zf30j folds the current line and the next 29
-" See link in Acknowledgements
+" * Create a fold:
+"   - zf<number of lines>j
+"   - e.g., zf30j folds the current line and the next 29
+" * Open a fold: zo
+" * Close a fold: zc
+" * See link in Acknowledgements
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting

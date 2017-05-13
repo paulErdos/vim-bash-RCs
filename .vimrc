@@ -41,6 +41,14 @@
 " Notes on the use of vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
+" Topics:
+" 1. Help
+" 2. Turning options off
+" 3. Regular expressions
+" 4. Add line numbers to text of file
+" 5. Multiline cursors
+" 6. Folding
+"
 " For help on any command, issue the command:
 " help 'optionname'
 " ex:
@@ -63,6 +71,10 @@
 " enter text
 " escape
 "
+" Folding
+" zf<number of lines>j
+" e.g., zf30j folds the current line and the next 29
+" See link in Acknowledgements
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting
@@ -197,6 +209,6 @@ set ruler
 
 " Acknowledgements
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
+" * http://vim.wikia.com/wiki/Folding
 " * http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

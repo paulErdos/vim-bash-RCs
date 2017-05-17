@@ -132,7 +132,8 @@ set hlsearch
 highlight Search ctermfg=red ctermbg=green
 
 " Set high-contrast colors for highlighting parentheses
-hi MatchParen cterm=bold ctermbg=blue ctermfg=green
+" hi MatchParen cterm=bold ctermbg=blue ctermfg=green
+hi MatchParen cterm=bold ctermbg=black ctermfg=lightblue
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

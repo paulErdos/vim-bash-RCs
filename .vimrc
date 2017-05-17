@@ -189,9 +189,11 @@ set ruler
 "Set color scheme
 "colorscheme elflord
 
-" put swap files in ~/.vim/swap_files
+" Put swap files in ~/.vim/swap_files
+" NOTE: This directory does not exist by default and must be created.
+" By default this is set to off by being commented out. Uncomment
+" once directory is created. 
 " ^= notation for :set prepends to the list, so this will be checked first
-" wait but what if it doesn't exist?
 "set directory^=$HOME/.vim/swap_files
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

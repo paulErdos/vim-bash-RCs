@@ -182,7 +182,16 @@ set expandtab
 "    1. Press "`" twice, and the cursor will jump back to the original
 "       delimiter the cursor was placed under.
 " 4. Press "x" again to delete the delimiter.
-
+"
+" Regular Expressions:
+" * Execute multiple regexes on a multiline selection.
+"   - Note the widespread use of "e", as well as its relation to "g"; in this
+"     example these cannot be exchanged.
+"   - Note that "%" must be added on every regex after the first
+"   - The regex itself as it was used:
+"     --> ":'<,'>s/string/integer/e | %s/a/1/eg | %s/!/0/e"
+"   - The regex made generic:
+"     --> ":'<,'>s/foo1/bar1/e | %s/foo2/bar2/eg | %s/foo3/bar3/e"
 
 " Turn on line numbering
 " Alternatively, :set number

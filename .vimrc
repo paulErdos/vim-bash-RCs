@@ -170,7 +170,7 @@ set expandtab
 " Other                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" To delete matching parenthesis:
+" To delete matching parentheses:
 " 1. The "%" character does this:
 "    1. Place cursor on one of ()[]{}.
 "    2. Press "%".
@@ -182,6 +182,10 @@ set expandtab
 "    1. Press "`" twice, and the cursor will jump back to the original
 "       delimiter the cursor was placed under.
 " 4. Press "x" again to delete the delimiter.
+"
+" To delete thing inside parentheses:
+" 1. Position cursor inside parens.
+" 2. "da)"
 "
 " Regular Expressions:
 " * Execute multiple regexes on a multiline selection.

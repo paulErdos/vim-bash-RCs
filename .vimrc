@@ -171,10 +171,17 @@ set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " To delete matching parenthesis:
-" The "%" character does this:
-" 1. Place cursor on one of ()[]{}.
-" 2. Press "%".
-" 3. Note that the cursor has jumped to the matching delimiter.
+" 1. The "%" character does this:
+"    1. Place cursor on one of ()[]{}.
+"    2. Press "%".
+"    3. Note that the cursor has jumped to the matching delimiter.
+" 2. Press "x" to delete the character under the cursor.
+" 3. The "`" is involved with jumping to marks and I don't completely
+"    understand it.
+"    0. read ":help marks"
+"    1. Press "`" twice, and the cursor will jump back to the original
+"       delimiter the cursor was placed under.
+" 4. Press "x" again to delete the delimiter.
 
 
 " Turn on line numbering

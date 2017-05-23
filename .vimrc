@@ -169,6 +169,13 @@ set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" To delete matching parenthesis:
+" The "%" character does this:
+" 1. Place cursor on one of ()[]{}.
+" 2. Press "%".
+" 3. Note that the cursor has jumped to the matching delimiter.
+
 
 " Turn on line numbering
 " Alternatively, :set number

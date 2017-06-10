@@ -117,14 +117,15 @@
 " -----------------------------------------------------------------------------
 
 " However, we can set cterm to be a list!
-highlight OverLength cterm=bold,underline
+" highlight OverLength cterm=bold,underline
+highlight OverLength cterm=bold
 
 " Show trailing whitespace and spaces before tabs
 highlight ExtraWhitespace ctermbg=green
 
 " Show tabs
-" Might be nice to underline in blue every 4th whitespace when there are no
-" characters aside from whitespace.
+" In the future, it might be nice to underline in blue every 4th whitespace
+" when there are no characters aside from whitespace.
 highlight Tabs ctermbg=blue
 
 " Combine the matches in the order we want

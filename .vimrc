@@ -48,22 +48,28 @@
 " 4. Add line numbers to text of file
 " 5. Multiline cursors
 " 6. Folding
+" 7. Text completion
 "
+" 1. Help
 " For help on any command, issue the command:
 " help 'optionname'
 " ex:
 " help 'tabstop'
 "
+" 2. Options
 " To unset options, vim prepends a "no" to the option, e.g.:
 " set nolist
 "
+" 3. Regex
 " Regex
 " :%s/foo/bar/g
 "
+" 4. Add line numbers to text of file
 " Add line numbers to text of file
 " Note: NOT :set nu, which displays line numbers in vim
 " :%s/^/\=line('.')/
 "
+" 5. Multiline cursors
 " Multiline cursors
 " ctrl + v
 " up/down or line number + enter
@@ -71,13 +77,22 @@
 " enter text
 " escape
 "
-" Folding
+" 6. Folding
 " * Create a fold:
 "   - zf<number of lines>j
 "   - e.g., zf30j folds the current line and the next 29
 " * Open a fold: zo
 " * Close a fold: zc
 " * See link in Acknowledgements
+"
+" 7. Completion
+" :h ins-completion
+" example:
+" 1. In insert mode, type "ins-complet"
+" 2. Press ctrl+x
+" 3. Press ctrl+i
+" Ctrl+n is also interesting.
+"
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting
@@ -189,6 +204,7 @@ set expandtab
 "
 " Regular Expressions:
 " * Execute multiple regexes on a multiline selection.
+"   - NOTE: "%" CAUSES THE REGEX TO WORK ON THE ENTIRE FILE. 
 "   - Note the widespread use of "e", as well as its relation to "g"; in this
 "     example these cannot be exchanged.
 "   - Note that "%" must be added on every regex after the first
@@ -219,7 +235,7 @@ set ruler
 " Put swap files in ~/.vim/swap_files
 " NOTE: This directory does not exist by default and must be created.
 " By default this is set to off by being commented out. Uncomment
-" once directory is created. 
+" once directory is created.
 " ^= notation for :set prepends to the list, so this will be checked first
 "set directory^=$HOME/.vim/swap_files
 

@@ -214,6 +214,23 @@ set expandtab
 "   - The regex made generic:
 "     --> ":'<,'>s/foo1/bar1/e | %s/foo2/bar2/eg | %s/foo3/bar3/e"
 
+" Iteratively adding text to files, for loops:
+"   The following example adds some IP addresses to a file:
+"   :for i in range(1,10) | put ='192.168.0.'.i | endfor
+"
+"   I used this:
+"   :for i in range(1,29) | put =i.'.' | endfor
+"   to add, e.g.,
+"   1.
+"   2.
+"   3.
+"   to a file.
+"
+"   Note: It appears that the index must be concatenated using a '.'
+"
+" More here:
+"   http://vim.wikia.com/wiki/Making_a_list_of_numbers
+
 " Turn on line numbering
 " Alternatively, :set number
 set nu

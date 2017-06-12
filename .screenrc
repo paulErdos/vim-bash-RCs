@@ -1,0 +1,6 @@
+# C-a <Tab> cycles only in one way. This can be cumbersome with many splits.
+# htns (Dvorak) <--> hjkl (QWERTY)
+bind t focus down
+bind n focus up
+bind h focus top
+bind s focus bottom

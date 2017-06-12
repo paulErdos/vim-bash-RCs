@@ -93,6 +93,58 @@
 " 3. Press ctrl+i
 " Ctrl+n is also interesting.
 "
+" 8. To delete matching parentheses:
+" 1. The "%" character does this:
+"    1. Place cursor on one of ()[]{}.
+"    2. Press "%".
+"    3. Note that the cursor has jumped to the matching delimiter.
+" 2. Press "x" to delete the character under the cursor.
+" 3. The "`" is involved with jumping to marks and I don't completely
+"    understand it.
+"    0. read ":help marks"
+"    1. Press "`" twice, and the cursor will jump back to the original
+"       delimiter the cursor was placed under.
+" 4. Press "x" again to delete the delimiter.
+"
+" 9. To delete thing inside parentheses:
+" 1. Position cursor inside parens.
+" 2. "da)"
+"
+" 10. Regular Expressions:
+" * Execute multiple regexes on a multiline selection.
+"   - NOTE: "%" CAUSES THE REGEX TO WORK ON THE ENTIRE FILE. 
+"   - Note the widespread use of "e", as well as its relation to "g"; in this
+"     example these cannot be exchanged.
+"   - Note that "%" must be added on every regex after the first
+"   - The regex itself as it was used:
+"     --> ":'<,'>s/string/integer/e | %s/a/1/eg | %s/!/0/e"
+"   - The regex made generic:
+"     --> ":'<,'>s/foo1/bar1/e | %s/foo2/bar2/eg | %s/foo3/bar3/e"
+"
+" 11. Iteratively adding text to files, for loops:
+"   The following example adds some IP addresses to a file:
+"   :for i in range(1,10) | put ='192.168.0.'.i | endfor
+"
+"   I used this:
+"   :for i in range(1,29) | put =i.'.' | endfor
+"   to add, e.g.,
+"   1.
+"   2.
+"   3.
+"   to a file.
+"
+"   Note: It appears that the index must be concatenated using a '.'
+"
+" More here:
+"   http://vim.wikia.com/wiki/Making_a_list_of_numbers
+"
+" 12. Recording
+" To start recording: press 'q', followed by a letter. (in normal mode)
+" Then everything is recorded until 'q' is pressed again in normal mode.
+" To reference that recording, press (in normal mode) "@", followed by
+" the letter from before. The recording will then be executed.
+"
+" Fun fact: playback of recordings can be recorded.
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting
@@ -186,50 +238,6 @@ set expandtab
 " Other                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" To delete matching parentheses:
-" 1. The "%" character does this:
-"    1. Place cursor on one of ()[]{}.
-"    2. Press "%".
-"    3. Note that the cursor has jumped to the matching delimiter.
-" 2. Press "x" to delete the character under the cursor.
-" 3. The "`" is involved with jumping to marks and I don't completely
-"    understand it.
-"    0. read ":help marks"
-"    1. Press "`" twice, and the cursor will jump back to the original
-"       delimiter the cursor was placed under.
-" 4. Press "x" again to delete the delimiter.
-"
-" To delete thing inside parentheses:
-" 1. Position cursor inside parens.
-" 2. "da)"
-"
-" Regular Expressions:
-" * Execute multiple regexes on a multiline selection.
-"   - NOTE: "%" CAUSES THE REGEX TO WORK ON THE ENTIRE FILE. 
-"   - Note the widespread use of "e", as well as its relation to "g"; in this
-"     example these cannot be exchanged.
-"   - Note that "%" must be added on every regex after the first
-"   - The regex itself as it was used:
-"     --> ":'<,'>s/string/integer/e | %s/a/1/eg | %s/!/0/e"
-"   - The regex made generic:
-"     --> ":'<,'>s/foo1/bar1/e | %s/foo2/bar2/eg | %s/foo3/bar3/e"
-
-" Iteratively adding text to files, for loops:
-"   The following example adds some IP addresses to a file:
-"   :for i in range(1,10) | put ='192.168.0.'.i | endfor
-"
-"   I used this:
-"   :for i in range(1,29) | put =i.'.' | endfor
-"   to add, e.g.,
-"   1.
-"   2.
-"   3.
-"   to a file.
-"
-"   Note: It appears that the index must be concatenated using a '.'
-"
-" More here:
-"   http://vim.wikia.com/wiki/Making_a_list_of_numbers
 
 " Turn on line numbering
 " Alternatively, :set number

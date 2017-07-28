@@ -203,6 +203,9 @@ highlight Search ctermfg=red ctermbg=green
 " hi MatchParen cterm=bold ctermbg=blue ctermfg=green
 hi MatchParen cterm=bold ctermbg=black ctermfg=lightblue
 
+" Set highlight color for searches
+" Previously, highlight_color ~ cursor_color
+highlight Search cterm=NONE ctermbg=grey ctermfg=blue
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End Highlighting

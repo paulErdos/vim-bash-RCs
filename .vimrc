@@ -208,18 +208,15 @@ set hlsearch
 " Turn on search highlighting.
 " ctermfg --> text
 " ctermbg --> block
-highlight Search ctermfg=red ctermbg=green
+highlight Search cterm=bold,underline ctermfg=darkgrey ctermbg=none
 
 " Set high-contrast colors for highlighting parentheses
 " hi MatchParen cterm=bold ctermbg=blue ctermfg=green
 hi MatchParen cterm=bold ctermbg=black ctermfg=lightcyan
 
-" Set highlight color for searches
-" Previously, highlight_color ~ cursor_color
-highlight Search cterm=NONE ctermbg=grey ctermfg=blue
-
 " Cool color schemes
-colorscheme default
+" However, they mess up other highlight options
+"colorscheme default
 "colorscheme pablo
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

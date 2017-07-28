@@ -1,3 +1,14 @@
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;orange\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;red\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -147,10 +158,7 @@
 " Fun fact: playback of recordings can be recorded.
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Highlighting
-"
-" Notes:
-" * 80 columns complies with Google's Python style guide. (add acknowledgement)
+" 3. Highlighting      
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Notes and Examples
@@ -166,14 +174,17 @@
 " The following won't work; cterm will be underline.
 " highlight OverLength cterm=bold cterm=underline
 "
+" Useful:
+" * https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
+"
 " -----------------------------------------------------------------------------
-
+"
 " However, we can set cterm to be a list!
 " highlight OverLength cterm=bold,underline
 highlight OverLength cterm=bold
 
 " Show trailing whitespace and spaces before tabs
-highlight ExtraWhitespace ctermbg=green
+highlight ExtraWhitespace ctermbg=LightBlue
 
 " Show tabs
 " In the future, it might be nice to underline in blue every 4th whitespace
@@ -192,7 +203,7 @@ set colorcolumn=81
 highlight colorcolumn ctermbg=8 ctermfg=11
 
 " Turn on search highlighting
-set hlsearch 
+set hlsearch
 
 " Turn on search highlighting.
 " ctermfg --> text
@@ -201,11 +212,15 @@ highlight Search ctermfg=red ctermbg=green
 
 " Set high-contrast colors for highlighting parentheses
 " hi MatchParen cterm=bold ctermbg=blue ctermfg=green
-hi MatchParen cterm=bold ctermbg=black ctermfg=lightblue
+hi MatchParen cterm=bold ctermbg=black ctermfg=lightcyan
 
 " Set highlight color for searches
 " Previously, highlight_color ~ cursor_color
 highlight Search cterm=NONE ctermbg=grey ctermfg=blue
+
+" Cool color schemes
+colorscheme default
+"colorscheme pablo
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End Highlighting
@@ -266,7 +281,7 @@ set ruler
 " By default this is set to off by being commented out. Uncomment
 " once directory is created.
 " ^= notation for :set prepends to the list, so this will be checked first
-"set directory^=$HOME/.vim/swap_files
+set directory^=$HOME/.vim/swap_files
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Obsolete

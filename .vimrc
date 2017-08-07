@@ -158,7 +158,7 @@ endif
 " Fun fact: playback of recordings can be recorded.
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 3. Highlighting      
+" 3. Highlighting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Notes and Examples
@@ -208,7 +208,7 @@ set hlsearch
 " Turn on search highlighting.
 " ctermfg --> text
 " ctermbg --> block
-highlight Search cterm=bold,underline ctermfg=darkgrey ctermbg=none
+highlight Search cterm=bold,underline ctermfg=darkgrey ctermbg=lightcyan
 
 " Set high-contrast colors for highlighting parentheses
 " hi MatchParen cterm=bold ctermbg=blue ctermfg=green

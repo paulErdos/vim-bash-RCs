@@ -1,4 +1,4 @@
-alias ls='ls -al'
+alias ls='ls -alh'
 
 # Use the patched version of GNU Screen that supports vertical splitting
 alias screen=/Users/developer/installed_stuff/screen.git/src/screen

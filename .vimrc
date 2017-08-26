@@ -1,13 +1,13 @@
-if &term =~ "xterm\\|rxvt"
-  " use an orange cursor in insert mode
-  let &t_SI = "\<Esc>]12;orange\x7"
-  " use a red cursor otherwise
-  let &t_EI = "\<Esc>]12;red\x7"
-  silent !echo -ne "\033]12;red\007"
-  " reset cursor when vim exits
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
-  " use \003]12;gray\007 for gnome-terminal
-endif
+"if &term =~ "xterm\\|rxvt"
+"  " use an orange cursor in insert mode
+"  let &t_SI = "\<Esc>]12;orange\x7"
+"  " use a red cursor otherwise
+"  let &t_EI = "\<Esc>]12;red\x7"
+"  silent !echo -ne "\033]12;red\007"
+"  " reset cursor when vim exits
+"  autocmd VimLeave * silent !echo -ne "\033]112\007"
+"  " use \003]12;gray\007 for gnome-terminal
+"endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,7 +178,8 @@ endif
 " * https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
 "
 " -----------------------------------------------------------------------------
-"
+
+
 " However, we can set cterm to be a list!
 " highlight OverLength cterm=bold,underline
 highlight OverLength cterm=bold
@@ -302,3 +303,22 @@ set directory^=$HOME/.vim/swap_files
 " * http://vim.wikia.com/wiki/Folding
 " * http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Highlight column and row the cursor is on
+set cursorline
+set cursorcolumn
+
+hi CursorLineNR ctermfg=226
+hi CursorLine   ctermbg=234 cterm=none
+hi CursorColumn   ctermbg=234 cterm=none
+hi CursorLineNR ctermfg=226
+hi LineNr ctermfg=240 ctermbg=235
+
+" Make cursor different color
+hi Cursor ctermfg=255 ctermbg=160
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+colorscheme vimbrant

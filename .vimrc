@@ -309,16 +309,17 @@ set cursorline
 set cursorcolumn
 
 hi CursorLineNR ctermfg=226
+hi CursorLine   cterm=underline
 hi CursorLine   ctermbg=234 cterm=none
 hi CursorColumn   ctermbg=234 cterm=none
 hi CursorLineNR ctermfg=226
 hi LineNr ctermfg=240 ctermbg=235
 
 " Make cursor different color
-hi Cursor ctermfg=255 ctermbg=160
+hi Cursor ctermfg=cyan ctermbg=bold
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme vimbrant
+"colorscheme vimbrant

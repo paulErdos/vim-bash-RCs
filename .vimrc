@@ -308,15 +308,10 @@ set directory^=$HOME/.vim/swap_files
 set cursorline
 set cursorcolumn
 
-hi CursorLineNR ctermfg=226
-hi CursorLine   cterm=underline
-hi CursorLine   ctermbg=234 cterm=none
+hi CursorLine   ctermbg=234
 hi CursorColumn   ctermbg=234 cterm=none
 hi CursorLineNR ctermfg=226
 hi LineNr ctermfg=240 ctermbg=235
-
-" Make cursor different color
-hi Cursor ctermfg=cyan ctermbg=bold
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors

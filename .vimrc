@@ -308,7 +308,7 @@ set directory^=$HOME/.vim/swap_files
 set cursorline
 set cursorcolumn
 
-hi CursorLine   ctermbg=234
+hi CursorLine ctermbg=234 ctermfg=none cterm=none
 hi CursorColumn   ctermbg=234 cterm=none
 hi CursorLineNR ctermfg=226
 hi LineNr ctermfg=240 ctermbg=235

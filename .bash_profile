@@ -16,9 +16,6 @@ alias screen=/Users/developer/installed_stuff/screen.git/src/screen
 
 # RULE: MY PATH COMES FIRST. NO PACKAGE MAY PREPEND THEIR GARBAGE TO MY PATH.
 
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
 PATH=$PATH:/Users/developer/Stuff_Ive_Installed/gdb/build/gdb
 PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.6/bin
 PATH=$PATH:~/Documents/Utilities/mongodb/bin

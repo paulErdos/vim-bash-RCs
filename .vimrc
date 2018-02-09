@@ -200,7 +200,7 @@ let t  = matchadd("Tabs", '\t\+')
 " Set colorcolumn to an appropriate position and effective color.
 " The goal is to bring attention to lines overlength.
 " :help cterm for color options
-set colorcolumn=81
+set colorcolumn=80
 highlight colorcolumn ctermbg=8 ctermfg=11
 
 " Turn on search highlighting

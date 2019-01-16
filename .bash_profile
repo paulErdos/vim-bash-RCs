@@ -2,6 +2,8 @@
 # Aliases                                                                     #
 #=============================================================================#
 
+alias python2='python'
+alias python='python3'
 alias ls='ls -alhF'
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin

@@ -336,6 +336,13 @@ hi LineNr ctermfg=240 ctermbg=235
 " Rainbow Parens https://github.com/junegunn/rainbow_parentheses.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Get vim-plug: https://github.com/junegunn/vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
@@ -345,3 +352,5 @@ Plug 'junegunn/rainbow_parentheses.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+" Activate: y this no work?
+"RainbowParentheses

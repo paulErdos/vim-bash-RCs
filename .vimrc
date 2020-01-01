@@ -176,9 +176,11 @@
 "
 " Useful:
 " * https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
-"
+" * https://en.wikipedia.org/wiki/File:Xterm_256color_chart.svg
 " -----------------------------------------------------------------------------
 
+" Change selection color
+hi Visual ctermbg=039 ctermfg=052
 
 " However, we can set cterm to be a list!
 " highlight OverLength cterm=bold,underline
@@ -194,7 +196,7 @@ highlight Tabs ctermbg=blue
 
 " Combine the matches in the order we want
 let ew = matchadd("ExtraWhitespace", ' \+\ze\t\|\s\+\%#\@<!$')
-let ol = matchadd("OverLength", '\%81v.*')
+let ol = matchadd("OverLength", '\%80v.*')
 let t  = matchadd("Tabs", '\t\+')
 
 " Set colorcolumn to an appropriate position and effective color.
@@ -209,11 +211,15 @@ set hlsearch
 " Turn on search highlighting.
 " ctermfg --> text
 " ctermbg --> block
-highlight Search cterm=bold,underline ctermfg=darkgrey ctermbg=lightcyan
+"highlight Search cterm=bold,underline ctermfg=darkgrey ctermbg=lightcyan
+highlight Search cterm=bold ctermfg=white ctermbg=017
 
 " Set high-contrast colors for highlighting parentheses
 " hi MatchParen cterm=bold ctermbg=blue ctermfg=green
 hi MatchParen cterm=bold ctermbg=black ctermfg=lightcyan
+
+" Matchparen has a finite max line length that messes up kubectl edit deployment
+set maxmempattern=5000
 
 " Cool color schemes
 " However, they mess up other highlight options
@@ -254,6 +260,8 @@ set expandtab
 " Other                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
+" Case-insensitive search
+set ignorecase
 
 " Turn on line numbering
 " Alternatively, :set number
@@ -281,6 +289,9 @@ set ruler
 " ^= notation for :set prepends to the list, so this will be checked first
 set directory^=$HOME/.vim/swap_files
 
+" Disable swap files
+set nobackup
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Obsolete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -305,10 +316,11 @@ set directory^=$HOME/.vim/swap_files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Highlight column and row the cursor is on
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 
-hi CursorLine ctermbg=234 ctermfg=none cterm=none
+" To see the 256 colors, look here: https://jonasjacek.github.io/colors/
+"hi CursorLine ctermbg=0 ctermfg=none cterm=none
 hi CursorColumn   ctermbg=234 cterm=none
 hi CursorLineNR ctermfg=226
 hi LineNr ctermfg=240 ctermbg=235
@@ -318,3 +330,18 @@ hi LineNr ctermfg=240 ctermbg=235
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "colorscheme vimbrant
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rainbow Parens https://github.com/junegunn/rainbow_parentheses.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+

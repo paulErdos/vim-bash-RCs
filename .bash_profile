@@ -4,23 +4,33 @@
 
 alias python2='python'
 alias python='python3'
-alias ls='ls -alhF'
-alias mysql=/usr/local/mysql/bin/mysql
-alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+alias ls='ls -AFGhlno' # n replaces username with numerical user id
 
-# Use the patched version of GNU Screen that supports vertical splitting
-alias screen=/Users/developer/installed_stuff/screen.git/src/screen
+#============================================================================#
+# Personalization
+#============================================================================#
 
+# Original: \h:\W \u\$
+export PS1='(>^_^)> '"\W \$ "
 
-#=============================================================================#
-# Path                                                                        #
-#=============================================================================#
+#============================================================================#
+# History
+#============================================================================#
 
-# RULE: MY PATH COMES FIRST. NO PACKAGE MAY PREPEND THEIR GARBAGE TO MY PATH.
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 
-PATH=$PATH:/Users/developer/Stuff_Ive_Installed/gdb/build/gdb
-PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.6/bin
-PATH=$PATH:~/Documents/Utilities/mongodb/bin
-PATH=$PATH:/Users/vincentsteffens/anaconda/bin
+# Append, don't overwrite
+shopt -s histappend
 
-export PATH
+# Add to history immediately, rather than on shell exit
+echo foo
+echo $PROMPT_COMMAND
+echo bar
+export PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -n"
+
+# Don't save identical to prev
+export HISTCONTROL=ignoredups
+
+# Ignore certain commands
+#export HISTIGNORE='ls:pwd' # Example

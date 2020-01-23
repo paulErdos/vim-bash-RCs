@@ -15,12 +15,13 @@
 " Contents; Section. Title:
 "   0. Contents
 "   1. Goals for this vimrc
-"   2. Notes on the use of vim
+"   2. Rainbow Parentheses
 "   3. Highlighting
 "   4. Tabs
 "   5. Other
 "   6. Obsolete
 "   7. Unknown
+"   8. Notes on the use of vim
 "
 "
 "  Question:
@@ -48,115 +49,30 @@
 " 2.
 " 3.
 "
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Notes on the use of vim
+" Rainbow Parens https://github.com/junegunn/rainbow_parentheses.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" Topics:
-" 1. Help
-" 2. Turning options off
-" 3. Regular expressions
-" 4. Add line numbers to text of file
-" 5. Multiline cursors
-" 6. Folding
-" 7. Text completion
-"
-" 1. Help
-" For help on any command, issue the command:
-" help 'optionname'
-" ex:
-" help 'tabstop'
-"
-" 2. Options
-" To unset options, vim prepends a "no" to the option, e.g.:
-" set nolist
-"
-" 3. Regex
-" Regex
-" :%s/foo/bar/g
-"
-" 4. Add line numbers to text of file
-" Add line numbers to text of file
-" Note: NOT :set nu, which displays line numbers in vim
-" :%s/^/\=line('.')/
-"
-" 5. Multiline cursors
-" Multiline cursors
-" ctrl + v
-" up/down or line number + enter
-" shift + i
-" enter text
-" escape
-"
-" 6. Folding
-" * Create a fold:
-"   - zf<number of lines>j
-"   - e.g., zf30j folds the current line and the next 29
-" * Open a fold: zo
-" * Close a fold: zc
-" * See link in Acknowledgements
-"
-" 7. Completion
-" :h ins-completion
-" example:
-" 1. In insert mode, type "ins-complet"
-" 2. Press ctrl+x
-" 3. Press ctrl+i
-" Ctrl+n is also interesting.
-"
-" 8. To delete matching parentheses:
-" 1. The "%" character does this:
-"    1. Place cursor on one of ()[]{}.
-"    2. Press "%".
-"    3. Note that the cursor has jumped to the matching delimiter.
-" 2. Press "x" to delete the character under the cursor.
-" 3. The "`" is involved with jumping to marks and I don't completely
-"    understand it.
-"    0. read ":help marks"
-"    1. Press "`" twice, and the cursor will jump back to the original
-"       delimiter the cursor was placed under.
-" 4. Press "x" again to delete the delimiter.
-"
-" 9. To delete thing inside parentheses:
-" 1. Position cursor inside parens.
-" 2. "da)"
-"
-" 10. Regular Expressions:
-" * Execute multiple regexes on a multiline selection.
-"   - NOTE: "%" CAUSES THE REGEX TO WORK ON THE ENTIRE FILE. 
-"   - Note the widespread use of "e", as well as its relation to "g"; in this
-"     example these cannot be exchanged.
-"   - Note that "%" must be added on every regex after the first
-"   - The regex itself as it was used:
-"     --> ":'<,'>s/string/integer/e | %s/a/1/eg | %s/!/0/e"
-"   - The regex made generic:
-"     --> ":'<,'>s/foo1/bar1/e | %s/foo2/bar2/eg | %s/foo3/bar3/e"
-"
-" 11. Iteratively adding text to files, for loops:
-"   The following example adds some IP addresses to a file:
-"   :for i in range(1,10) | put ='192.168.0.'.i | endfor
-"
-"   I used this:
-"   :for i in range(1,29) | put =i.'.' | endfor
-"   to add, e.g.,
-"   1.
-"   2.
-"   3.
-"   to a file.
-"
-"   Note: It appears that the index must be concatenated using a '.'
-"
-" More here:
-"   http://vim.wikia.com/wiki/Making_a_list_of_numbers
-"
-" 12. Recording
-" To start recording: press 'q', followed by a letter. (in normal mode)
-" Then everything is recorded until 'q' is pressed again in normal mode.
-" To reference that recording, press (in normal mode) "@", followed by
-" the letter from before. The recording will then be executed.
-"
-" Fun fact: playback of recordings can be recorded.
-"
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" List ends here. Plugins become visible to Vim after this call.
+"Automatically executes filetype plugin indent on and syntax enable. You can
+"revert the settings after the call. e.g. filetype indent off, syntax off,
+"etc.
+call plug#end()
+filetype indent off
+
+" Start it for all filetypes
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType * RainbowParentheses
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 3. Highlighting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -333,15 +249,111 @@ hi LineNr ctermfg=240 ctermbg=235
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Rainbow Parens https://github.com/junegunn/rainbow_parentheses.vim
+" Notes on the use of vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
-
-" Declare the list of plugins.
-Plug 'junegunn/rainbow_parentheses.vim'
-
-" List ends here. Plugins become visible to Vim after this call.
-call plug#end()
-
+"
+" Topics:
+" 1. Help
+" 2. Turning options off
+" 3. Regular expressions
+" 4. Add line numbers to text of file
+" 5. Multiline cursors
+" 6. Folding
+" 7. Text completion
+"
+" 1. Help
+" For help on any command, issue the command:
+" help 'optionname'
+" ex:
+" help 'tabstop'
+"
+" 2. Options
+" To unset options, vim prepends a "no" to the option, e.g.:
+" set nolist
+"
+" 3. Regex
+" Regex
+" :%s/foo/bar/g
+"
+" 4. Add line numbers to text of file
+" Add line numbers to text of file
+" Note: NOT :set nu, which displays line numbers in vim
+" :%s/^/\=line('.')/
+"
+" 5. Multiline cursors
+" Multiline cursors
+" ctrl + v
+" up/down or line number + enter
+" shift + i
+" enter text
+" escape
+"
+" 6. Folding
+" * Create a fold:
+"   - zf<number of lines>j
+"   - e.g., zf30j folds the current line and the next 29
+" * Open a fold: zo
+" * Close a fold: zc
+" * See link in Acknowledgements
+"
+" 7. Completion
+" :h ins-completion
+" example:
+" 1. In insert mode, type "ins-complet"
+" 2. Press ctrl+x
+" 3. Press ctrl+i
+" Ctrl+n is also interesting.
+"
+" 8. To delete matching parentheses:
+" 1. The "%" character does this:
+"    1. Place cursor on one of ()[]{}.
+"    2. Press "%".
+"    3. Note that the cursor has jumped to the matching delimiter.
+" 2. Press "x" to delete the character under the cursor.
+" 3. The "`" is involved with jumping to marks and I don't completely
+"    understand it.
+"    0. read ":help marks"
+"    1. Press "`" twice, and the cursor will jump back to the original
+"       delimiter the cursor was placed under.
+" 4. Press "x" again to delete the delimiter.
+"
+" 9. To delete thing inside parentheses:
+" 1. Position cursor inside parens.
+" 2. "da)"
+"
+" 10. Regular Expressions:
+" * Execute multiple regexes on a multiline selection.
+"   - NOTE: "%" CAUSES THE REGEX TO WORK ON THE ENTIRE FILE. 
+"   - Note the widespread use of "e", as well as its relation to "g"; in this
+"     example these cannot be exchanged.
+"   - Note that "%" must be added on every regex after the first
+"   - The regex itself as it was used:
+"     --> ":'<,'>s/string/integer/e | %s/a/1/eg | %s/!/0/e"
+"   - The regex made generic:
+"     --> ":'<,'>s/foo1/bar1/e | %s/foo2/bar2/eg | %s/foo3/bar3/e"
+"
+" 11. Iteratively adding text to files, for loops:
+"   The following example adds some IP addresses to a file:
+"   :for i in range(1,10) | put ='192.168.0.'.i | endfor
+"
+"   I used this:
+"   :for i in range(1,29) | put =i.'.' | endfor
+"   to add, e.g.,
+"   1.
+"   2.
+"   3.
+"   to a file.
+"
+"   Note: It appears that the index must be concatenated using a '.'
+"
+" More here:
+"   http://vim.wikia.com/wiki/Making_a_list_of_numbers
+"
+" 12. Recording
+" To start recording: press 'q', followed by a letter. (in normal mode)
+" Then everything is recorded until 'q' is pressed again in normal mode.
+" To reference that recording, press (in normal mode) "@", followed by
+" the letter from before. The recording will then be executed.
+"
+" Fun fact: playback of recordings can be recorded.
+"

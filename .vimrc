@@ -124,9 +124,6 @@ highlight colorcolumn ctermbg=8 ctermfg=11
 " Turn on search highlighting
 set hlsearch
 
-" Turn on incremental searching
-set incsearch
-
 " Turn on search highlighting.
 " ctermfg --> text
 " ctermbg --> block

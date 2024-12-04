@@ -16,7 +16,7 @@ export HISTFILESIZE=100000
 shopt -s histappend
 
 # Add to history immediately, rather than on shell exit
-export PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -n"
+#export PROMPT_COMMAND="$PROMPT_COMMAND; history; history -n"
 
 # Don't save identical to prev
 export HISTCONTROL=ignoredups
@@ -97,7 +97,7 @@ export PATH=$PATH:~/go/bin
 export PATH=$PATH:/usr/local/scala/bin
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.7/bin
 #export PATH=$PATH:~/scripts
-export PATH=$PATH:~/Documents/Repositories/tools
+export PATH=$PATH:~/Repositories/small-tools
 
 #============================================================================
 # Environment Variables                                                      #
@@ -122,3 +122,12 @@ export GOPATH=~/Documents/Learning/go
 #unset __conda_setup
 ## <<< conda initialize <<<
 #
+
+
+###
+# Node
+###
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -98,6 +98,7 @@ export PATH=$PATH:/usr/local/scala/bin
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.7/bin
 #export PATH=$PATH:~/scripts
 export PATH=$PATH:~/Repositories/small-tools/in-path
+export PATH=$PATH:~/.cargo/bin
 
 #============================================================================
 # Environment Variables                                                      #

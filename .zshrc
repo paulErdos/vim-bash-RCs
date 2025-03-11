@@ -79,3 +79,70 @@ export PROMPT='%F{cyan}(>^_^)>%f %1~ %(!.#.>) '
 #============================================================================#
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+#============================================================================#
+# Aliases                                                                    #
+#============================================================================#
+
+# Zorklike Shell
+alias look=ls
+
+alias go="cd "
+alias back=" -"
+alias north=".."
+
+alias map="pwd"
+alias scroll=man
+
+
+# Bash
+# -----------
+
+alias ls='ls -aFghG' # n replaces username with numerical user id
+#alias ls='ls -alhFGioOps' # wide, everything
+function .. { cd '..'; }
+function ... { cd '../..'; }
+function .... { cd '../../..'; }
+
+
+# Bash Ecosystem
+# ----------------
+
+# Use the patched version of GNU Screen that supports vertical splitting
+#alias screen=/Users/developer/installed_stuff/screen.git/src/screen
+
+
+# Python
+# -----------
+
+alias pip='pip3'
+alias python2='/usr/bin/python'
+alias python='python3'
+
+
+
+#============================================================================#
+# Path - End section, deliberately-open-ended                                #
+#============================================================================#
+
+#PATH=$PATH:~/scripts
+PATH=$PATH:/Users/developer/Stuff_Ive_Installed/gdb/build/gdb
+PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.6/bin
+PATH=$PATH:~/Documents/Utilities/mongodb/bin
+PATH=$PATH:/Users/vincentsteffens/anaconda/bin
+PATH=$PATH:~/Library/Python/3.7/bin/
+export PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$PATH:~/go
+export PATH=$PATH:~/go/bin
+export PATH=$PATH:/usr/local/scala/bin
+export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.7/bin
+#export PATH=$PATH:~/scripts
+export PATH=$PATH:~/Repositories/small-tools/in-path
+export PATH=$PATH:~/.cargo/bin
+PATH=/home/neon/Repositories/small-tools:"$PATH"
+# Deliberately open-ended for appending
+
+
+

@@ -2,6 +2,7 @@
 # Color
 #============================================================================#
 
+# See also ls colors in alternate section below.
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -63,7 +64,10 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 #============================================================================#
 
 # Original: \h:\W \u\$
-#export PS1='(>^_^)> '"\W \$ "
+export PS1='(>^_^)> '"\W \$ "
+#export PS1='(>^_^)> '"${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+#export PS1='(>^_^)> '"\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+
 
 #============================================================================#
 # History
@@ -108,15 +112,22 @@ alias scroll=man
 # Bash
 # -----------
 
-alias ls='ls -aFgh' # n replaces username with numerical user id
+## Holy moly check out the command: dircolors -p; can also dircolors -p > ~/.dircolors
+alias ls='ls -lAFpgh --group-directories-first --color=auto -alv'
+export LS_COLORS="di=01;34:ln=01;35:ex=01;31:*.txt=01;32:*.sh=01;33:*=01;32:"
+
+# ls notes i guess
+#alias ls='ls -aFgh' # n replaces username with numerical user id
 #alias ls='ls -alhFGioOps' # wide, everything
+
+# Suffering is optional
 function .. { cd '..'; }
 function ... { cd '../..'; }
 function .... { cd '../../..'; }
 
 
 # Bash Ecosystem
-# ----------------
+# ---------------
 
 # Use the patched version of GNU Screen that supports vertical splitting
 #alias screen=/Users/developer/installed_stuff/screen.git/src/screen
@@ -140,7 +151,7 @@ alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 # Kubernetes / k8s
 # ------------------
 
-# Begin aliases from Peter
+# Begin aliases from Pete
 alias k='kubectl'
 alias kg='kubectl get'
 alias ke='kubectl exec -it'

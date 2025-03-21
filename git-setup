@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+git config --global core.editor "vim"
+export GIT_EDITOR=vim
+
+export VISUAL=vim
+export EDITOR="$VISUAL"

@@ -55,23 +55,23 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'junegunn/rainbow_parentheses.vim'
+"Plug 'junegunn/rainbow_parentheses.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 "Automatically executes filetype plugin indent on and syntax enable. You can
 "revert the settings after the call. e.g. filetype indent off, syntax off,
 "etc.
-call plug#end()
+"call plug#end()
 filetype indent off
 
 " Start it for all filetypes
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType * RainbowParentheses
-augroup END
+"augroup rainbow_lisp
+"  autocmd!
+"  autocmd FileType * RainbowParentheses
+"augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 3. Highlighting

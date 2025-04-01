@@ -43,7 +43,7 @@ alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 
 # Use the patched version of GNU Screen that supports vertical splitting
-alias screen=/Users/developer/installed_stuff/screen.git/src/screen
+#alias screen=/Users/developer/installed_stuff/screen.git/src/screen
 
 alias set_aws_env.sh='source set_aws_env.sh'
 alias kubeconnect.sh='source kubeconnect.sh'

@@ -1,0 +1,4 @@
+# Startup into terminal, enable to not
+#sudo systemctl disable lightdm.service
+# To find out if using lightdm, for ubuntu + debian:
+#sudo cat /etc/X11/default-display-manager

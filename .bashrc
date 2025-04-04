@@ -239,3 +239,6 @@ PATH=/home/neon/Repositories/small-tools:"$PATH"
 # Deliberately open-ended for appending
 
 
+
+# Created by `pipx` on 2025-04-04 05:33:01
+export PATH="$PATH:/home/vincent/.local/bin"

@@ -4,6 +4,7 @@ echo "Setup initiated... "
 
 cp .bashrc ~/
 cp .bash_profile ~/
+cp .bash_completions ~/
 cp .vimrc ~/
 cp .zshrc ~/
 #cp com.apple.Terminal.plist ~/Library/Preferences/

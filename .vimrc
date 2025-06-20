@@ -142,7 +142,7 @@ set maxmempattern=5000
 
 " Cool color schemes
 " However, they mess up other highlight options
-"colorscheme default
+colorscheme default
 "colorscheme pablo
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -210,6 +210,8 @@ set directory^=$HOME/.vim/swap_files
 
 " Disable swap files
 set nobackup
+set noswapfile
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Obsolete

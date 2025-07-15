@@ -13,18 +13,8 @@
 #    b. Then reads ~/.bashrc
 
 #============================================================================#
-# Feedback to user
-#============================================================================#
-
-# For some reason this whole thing takes a while.
-echo 'Processing...'
-
-
-#============================================================================#
 # Color
 #============================================================================#
-
-echo -n '    Color... '
 
 # See also ls colors in alternate section below.
 
@@ -49,8 +39,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# Breaks sftp
-#echo 'Color prompt: '"$color_prompt"
+echo 'Color prompt: '"$color_prompt"
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:debian_chroot+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -83,33 +72,26 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-echo '    Done!'
 
 #============================================================================#
 # Personalization
 #============================================================================#
-
-echo -n '    Prompt... '
 
 # Original: \h:\W \u\$
 export PS1='(>^_^)> '"\W \$ "
 #export PS1='(>^_^)> '"${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
 #export PS1='(>^_^)> '"\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
 
-echo '    Done!'
 
 #============================================================================#
 # History
 #============================================================================#
 
-
-echo -n '    History... '
-
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 
 # Append, don't overwrite
-#shopt -s histappend
+shopt -s histappend
 
 # Add to history immediately, rather than on shell exit
 #export PROMPT_COMMAND="$PROMPT_COMMAND; history; history -n"
@@ -120,8 +102,6 @@ export HISTCONTROL=ignoredups
 # Ignore certain commands
 #export HISTIGNORE='ls:pwd' # Example
 
-echo '    Done!'
-
 #============================================================================#
 # Bastion, dms, hadooop                                                      #
 #============================================================================#
@@ -131,8 +111,6 @@ echo '    Done!'
 #============================================================================#
 # Aliases                                                                    #
 #============================================================================#
-
-echo -n '    Aliases... '
 
 # Zorklike Shell
 alias look=ls
@@ -149,7 +127,7 @@ alias scroll=man
 # -----------
 
 ## Holy moly check out the command: dircolors -p; can also dircolors -p > ~/.dircolors
-#alias ls='ls -lAFpgh --group-directories-first --color=auto -alv'
+#alias ls='ls -lAFpgh --group-directories-first --color=auto -alv' # macosls cant group
 alias ls='ls -lAFpgh --color=auto -alv'
 export LS_COLORS="di=01;34:ln=01;35:ex=01;31:*.txt=01;32:*.sh=01;33:*=01;32:"
 
@@ -219,39 +197,29 @@ function kcns { kubectl config set-context --current --namespace="$@"; }
 # where we are
 #alias cd='cd $1; cdes $1'
 
-echo '    Done!'
 
 
 #============================================================================
 # Environment Variables                                                      #
 #============================================================================#
 
-echo -n '    Go... '
-
 export GOPATH=~/Documents/Learning/go
 
-echo '    Done!'
 
 
 #============================================================================#
 # Node                                                                       #
 #============================================================================#
 
-echo -n '    Node... '
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm alias default 20 $> /dev/null
-nvm use default &> /dev/null
 
-echo '    Done!'
+
 
 #============================================================================#
 # Path - End section, deliberately-open-ended                                #
 #============================================================================#
-
-echo -n '    Path... '
 
 #PATH=$PATH:~/scripts
 PATH=$PATH:/Users/developer/Stuff_Ive_Installed/gdb/build/gdb
@@ -272,16 +240,3 @@ PATH=/home/neon/Repositories/small-tools:"$PATH"
 export PATH=$PATH:/Users/vincent/.local/bin
 # Deliberately open-ended for appending
 
-echo '    Done!'
-    
-#============================================================================#
-# Feedback to user
-#============================================================================#
-
-# For some reason this whole thing takes a while.
-echo 'Done!'
-
-
-
-# Created by `pipx` on 2025-04-04 05:33:01
-export PATH="$PATH:/home/vincent/.local/bin"

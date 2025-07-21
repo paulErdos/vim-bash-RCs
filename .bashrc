@@ -270,7 +270,13 @@ export PATH=$PATH:~/Repositories/small-tools/in-path
 export PATH=$PATH:~/.cargo/bin
 PATH=/home/neon/Repositories/small-tools:"$PATH"
 export PATH=$PATH:/Users/vincent/.local/bin
-# Deliberately open-ended for appending
+
+# Put the current directory in the path
+export PATH="$PATH:."
+
+# User installs
+export PATH="$PATH:~/Installs/Cursor"
+
 
 echo '    Done!'
     

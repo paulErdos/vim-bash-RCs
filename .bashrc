@@ -17,14 +17,14 @@
 #============================================================================#
 
 # For some reason this whole thing takes a while.
-echo 'Processing...'
+#echo 'Processing...'
 
 
 #============================================================================#
 # Color
 #============================================================================#
 
-echo -n '    Color... '
+#echo -n '    Color... '
 
 # See also ls colors in alternate section below.
 
@@ -83,27 +83,27 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-echo '    Done!'
+#echo '    Done!'
 
 #============================================================================#
 # Personalization
 #============================================================================#
 
-echo -n '    Prompt... '
+#echo -n '    Prompt... '
 
 # Original: \h:\W \u\$
 export PS1='(>^_^)> '"\W \$ "
 #export PS1='(>^_^)> '"${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
 #export PS1='(>^_^)> '"\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
 
-echo '    Done!'
+#echo '    Done!'
 
 #============================================================================#
 # History
 #============================================================================#
 
 
-echo -n '    History... '
+#echo -n '    History... '
 
 export HISTSIZE=100000
 export HISTFILESIZE=100000
@@ -120,7 +120,7 @@ export HISTCONTROL=ignoredups
 # Ignore certain commands
 #export HISTIGNORE='ls:pwd' # Example
 
-echo '    Done!'
+#echo '    Done!'
 
 #============================================================================#
 # Bastion, dms, hadooop                                                      #
@@ -132,7 +132,7 @@ echo '    Done!'
 # Aliases                                                                    #
 #============================================================================#
 
-echo -n '    Aliases... '
+#echo -n '    Aliases... '
 
 # Zorklike Shell
 alias look=ls
@@ -219,39 +219,39 @@ function kcns { kubectl config set-context --current --namespace="$@"; }
 # where we are
 #alias cd='cd $1; cdes $1'
 
-echo '    Done!'
+#echo '    Done!'
 
 
 #============================================================================
 # Environment Variables                                                      #
 #============================================================================#
 
-echo -n '    Go... '
+#echo -n '    Go... '
 
 export GOPATH=~/Documents/Learning/go
 
-echo '    Done!'
+#echo '    Done!'
 
 
 #============================================================================#
 # Node                                                                       #
 #============================================================================#
 
-echo -n '    Node... '
+#echo -n '    Node... '
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#nvm alias default 20 $> /dev/null
+nvm alias default 20 $> /dev/null
 nvm use default &> /dev/null
 
-echo '    Done!'
+#echo '    Done!'
 
 #============================================================================#
 # Path - End section, deliberately-open-ended                                #
 #============================================================================#
 
-echo -n '    Path... '
+#echo -n '    Path... '
 
 #PATH=$PATH:~/scripts
 PATH=$PATH:/Users/developer/Stuff_Ive_Installed/gdb/build/gdb
@@ -278,14 +278,14 @@ export PATH="$PATH:."
 export PATH="$PATH:~/Installs/Cursor"
 
 
-echo '    Done!'
+#echo '    Done!'
     
 #============================================================================#
 # Feedback to user
 #============================================================================#
 
 # For some reason this whole thing takes a while.
-echo 'Done!'
+#echo 'Done!'
 
 
 

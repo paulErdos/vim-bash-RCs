@@ -2,6 +2,7 @@
 
 echo "Setup initiated... "
 
+cp .zshrc ~/
 cp .bashrc ~/
 cp .bash_profile ~/
 cp .bash_completion ~/

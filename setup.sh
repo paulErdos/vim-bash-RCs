@@ -2,6 +2,8 @@
 
 echo "Setup initiated... "
 
+./install-vim-ts-syntax-highlighting.sh
+
 cp .zshrc ~/
 cp .bashrc ~/
 cp .bash_profile ~/

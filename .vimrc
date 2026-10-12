@@ -145,6 +145,12 @@ set maxmempattern=5000
 colorscheme default
 "colorscheme pablo
 
+" Typescript syntax highlighting
+call plug#begin()
+Plug 'HerringtonDarkholme/yats.vim'
+call plug#end()
+set re=0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End Highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

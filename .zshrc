@@ -257,3 +257,16 @@ if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
+alias ls='ls -lAFpgh --color=auto -alv'
+alias look=ls
+alias go="cd "
+alias back=" -"
+alias north=".."
+alias map="pwd"
+alias scroll=man
+alias pip='pip3'
+alias python2='/usr/bin/python'
+alias python='python3'
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+nvm alias default 20 $> /dev/null

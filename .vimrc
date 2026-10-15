@@ -167,6 +167,8 @@ set re=0
 " Set width of tab
 set tabstop=4
 
+set shiftwidth=4
+
 " Type spaces instead of tabs
 set expandtab
 

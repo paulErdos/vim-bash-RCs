@@ -270,3 +270,8 @@ alias python='python3'
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 nvm alias default 20 $> /dev/null
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install 22.23.4
+nvm use 22.23.4
+nvm alias default 22.23.4

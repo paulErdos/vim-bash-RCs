@@ -291,3 +291,8 @@ export PATH="$PATH:~/Installs/Cursor"
 
 # Created by `pipx` on 2025-04-04 05:33:01
 export PATH="$PATH:/home/vincent/.local/bin"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install 22.23.4
+nvm use 22.23.4
+nvm alias default 22.23.4

@@ -15,6 +15,6 @@ cp .zshrc ~/
 # Start the user a new shell
 echo 'Dropping you into a new shell with configs sourced'
 # Could do this
-/usr/bin/env bash
+#/usr/bin/env bash
 # But this is cool and good
-#eval "$(echo $SHELL)"
+eval "$(echo $SHELL)"
